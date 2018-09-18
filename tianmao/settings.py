@@ -15,7 +15,7 @@ import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -29,35 +29,79 @@ ALLOWED_HOSTS = []
 
 # Application definition
 # 系统apps
-SYS_APPS = ['django.contrib.admin',
-            'django.contrib.auth',
-            'django.contrib.contenttypes',
-            'django.contrib.sessions',
-            'django.contrib.messages',
-            'django.contrib.staticfiles', ]
-# 配置中的apps
-EXT_APPS = ['xadmin',
-            'crispy_forms',
-            'reversion', ]
-# 我自己的app
+# SYS_APPS = [ 'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#              ]
+# # 配置中的apps
+# EXT_APPS = [
+#             ]
+# # 我自己的app
+# MY_APPS = [
+#
+#
+# ]
+#
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     #     用户
+#     'apps.account',
+#     #     支付
+#     'apps.pay',
+#     # 首页
+#     'apps.home',
+#     #    订单
+#     'apps.order',
+#     'apps.cate_detatil',
+#     #     商品详情
+#     'apps.shop_detail',
+#     # 购物车
+#     'apps.car',
+#     'xadmin',
+#     'crispy_forms',
+#     'reversion',
+# ]
+SYS_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+# 第三方扩展
+EXT_APPS = [
+    'xadmin',
+    'crispy_forms',
+    'reversion',
+]
+# 自定义的app
 MY_APPS = [
-    'taobao',
-    #     用户
+
+    # 用户
     'apps.account',
-    #     支付
+    # 购物车
+    'apps.car',
+    # 支付
     'apps.pay',
     # 首页
     'apps.home',
-    #    订单
-    'apps.order',
-    'apps.cate_detatil',
-    #     商品详情
+    # 详情
     'apps.shop_detail',
-    # 购物车
-    'apps.car',
+    # 分类
+    'apps.cate_detatil',
+    # 订单
+    'apps.order',
 
 ]
-
 INSTALLED_APPS = SYS_APPS + EXT_APPS + MY_APPS
 
 MIDDLEWARE = [
@@ -138,6 +182,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),
+                    os.path.join(BASE_DIR,'apps/home/static'),  )
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'),)

@@ -1,0 +1,6 @@
+<ul>
+    <li><span>商品分类</span></li>
+    {% for navigation in navigations %}
+        <li><a href="#">{{ navigation.nav_name }}</a></li>
+    {% endfor %}
+</ul>

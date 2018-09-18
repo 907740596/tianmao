@@ -1,1 +1,0 @@
-deful_app_config='account.apps.Account.Config'

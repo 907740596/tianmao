@@ -17,7 +17,7 @@ import xadmin
 from django.contrib import admin
 from django.conf.urls import url, include
 
-from home import views
+from apps.home import views
 
 urlpatterns = [
    url('xadmin/', xadmin.site.urls),

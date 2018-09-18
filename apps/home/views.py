@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from home.models import *
+from apps.home.models import *
 
 
 def index(request):
@@ -17,4 +17,4 @@ def index(request):
            sub.subs2=sub.submenu2_set.all()
     # 轮播图数据
     banners = Banner.objects.all()
-    return render(request,'index.heml',{'navigations':navigation,'banners':banners,'categorise':category})
+    return render(request,'index.html',{'navigations':navigation,'banners':banners,'categorise':categorys})
